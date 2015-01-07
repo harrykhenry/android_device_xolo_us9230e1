@@ -1,0 +1,1 @@
+# android_device_xolo_us9230e1
