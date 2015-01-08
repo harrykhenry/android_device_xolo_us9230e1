@@ -19,7 +19,7 @@ bin/aplay
 bin/btmacwriter
 bin/cluster
 bin/dnsmasq
-#bin/fild
+bin/fild
 bin/fastTestUsingKernel
 bin/hdcp_test
 bin/hostapd
