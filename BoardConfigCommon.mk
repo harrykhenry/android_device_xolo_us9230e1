@@ -140,14 +140,14 @@ BOARD_SEPOLICY_DIRS := \
 device/xolo/us9230e1/sepolicy
 
 BOARD_SEPOLICY_UNION := \
+file_contexts \
 app.te \
 device.te \
-domain.te \
+drmserver.te \
+init_shell.te \
 file.te \
-file_contexts.te \
-keystore.te \
-mediaserver.te \
 rild.te \
+shell.te \
 surfaceflinger.te \
 system.te \
 zygote.te
