@@ -95,7 +95,7 @@ BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
 
 #recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB = device/xolo/us9230e1/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/xolo/us9230e1/fstab.us9230e1
 TARGET_RECOVERY_INITRC := device/xolo/us9230e1/recovery/init.recovery.us9230e1.rc
 RECOVERY_FSTAB_VERSION = 2
 TARGET_USERIMAGES_USE_EXT4 := true
