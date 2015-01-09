@@ -107,110 +107,40 @@ PRODUCT_COPY_FILES += \
 device/xolo/us9230e1/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl \
 device/xolo/us9230e1/raydium_ts.idc:system/usr/idc/raydium_ts.idc 
 
-# Charger mode
-PRODUCT_PACKAGES += \
-charger \
-charger_res_images
-
+$(call inherit-product, build/target/product/core.mk)
 
 PRODUCT_PACKAGES += \
-    hostapd_cli
-
-# BlueZ test tools & Shared Transport user space mgr
-PRODUCT_PACKAGES += \
-hciconfig \
-hcitool
-
+hostapd_cli
+# Audio
 PRODUCT_PACKAGES += \
 audio.a2dp.default \
-audio.r_submix.default \
-bttest \
-charger \
-charger_res_images \
-com.android.future.usb.accessory \
-l2ping \
-libaudioutils \
-libbt-vendor \
-libdbus \
-librs_jni \
-libstagefrighthw \
 libtinyalsa \
-libaudioutils \
-xaplay \
-setup_fs 
-
-PRODUCT_PACKAGES := \
-    libwpa_client \
-    hostapd \
-    dhcpcd.conf \
-    wpa_supplicant \
-    wpa_supplicant.conf \
-    iw
-
-PRODUCT_PACKAGES += \
-    lights.us9230e1 \
-    audio.primary.us9230e1 \
-    power.us9230e1 \
-    audio.a2dp.default \
-    audio.usb.default \
-    audio.r_submix.default \
-    librs_jni \
-    l2ping \
-    hcitool \
-    bttest \
-    com.android.future.usb.accessory \
-    libhealth.us9230e1 \
-    libtinyalsa \
-    libstagefrighthw
+libaudioutils
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-    e2fsck \
-    setup_fs
-
-# audio packages
-PRODUCT_PACKAGES += \
-tinymix \
-tinyplay \
-tinycap
-
-
-# Filesystem management tools
-PRODUCT_PACKAGES += \
-    make_ext4fs \
-    setup_fs
+make_ext4fs \
+setup_fs
 
 # Other apps
 PRODUCT_PACKAGES += \
-    Torch \
-    com.android.future.usb.accessory
-
-PRODUCT_PACKAGES += \
-    hostapd_cli \
-    calibrator
-
-# rild
-PRODUCT_PACKAGES := \
-    rild \
-    BasicSmsReceiver
-
+Torch \
+com.android.future.usb.accessory
 # Video
 PRODUCT_PACKAGES += \
-    libstagefrighthw
-
+libstagefrighthw
 # iw
 PRODUCT_PACKAGES += \
-    iw
+iw
+# Configs
+PRODUCT_COPY_FILES += \
+device/xolo/us9230e1/configs/egl.cfg:system/lib/egl/egl.cfg
 
 # rild
 PRODUCT_PACKAGES := \
     rild \
+    Mms \
     BasicSmsReceiver
-
-# Configs
-PRODUCT_COPY_FILES += \
-    device/xolo/us9230e1/configs/egl.cfg:system/lib/egl/egl.cfg
-
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -226,6 +156,4 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 DEVICE_PACKAGE_OVERLAYS := \
     device/xolo/us9230e1/overlay
     
-$(call inherit-product, build/target/product/full.mk)
-$(call inherit-product, hardware/ti/wlan/mac80211/wl128x-wlan-products.mk)
 
